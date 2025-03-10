@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:expense_tracker_app/modles/expense.dart';
 import 'package:expense_tracker_app/widgets/chart.dart';
 import 'package:expense_tracker_app/widgets/expenses_list.dart';
@@ -31,6 +29,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      useSafeArea: true,
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
@@ -53,17 +52,22 @@ class _ExpensesState extends State<Expenses> {
       SnackBar(
         duration: Duration(seconds: 3),
         content: Text('Expense deleted'),
-        action: SnackBarAction(label: 'Undo', onPressed: () {
-          setState(() {
-            _registeredExpenses.insert(expenseIndex, expense);
-          });
-        }),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () {
+            setState(() {
+              _registeredExpenses.insert(expenseIndex, expense);
+            });
+          },
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     Widget mainContent = Center(
       child: Text("No expenses found. Start adding some !"),
     );
@@ -80,14 +84,20 @@ class _ExpensesState extends State<Expenses> {
           IconButton(onPressed: _openAddExpenseOverlay, icon: Icon(Icons.add)),
         ],
       ),
-      body: Column(
-        children: [
-          Chart(expenses: _registeredExpenses,),
-          Expanded(
-            child: mainContent
-          ),
-        ],
-      ),
+      body:
+          screenWidth < 600
+              ? Column(
+                children: [
+                  Chart(expenses: _registeredExpenses),
+                  Expanded(child: mainContent),
+                ],
+              )
+              : Row(
+                children: [
+                  Expanded(child: Chart(expenses: _registeredExpenses)),
+                  Expanded(child: mainContent),
+                ],
+              ),
     );
   }
 }
