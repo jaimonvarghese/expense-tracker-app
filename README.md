@@ -1,16 +1,48 @@
-# expense_tracker_app
+# Expense Tracker App
 
-A new Flutter project.
+🚀 **Expense Tracker App** is a simple and intuitive Flutter application that allows users to track their expenses efficiently. This app was developed as part of a study project on Udemy.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+✅ Add, view, and delete expenses  
+✅ Categorize expenses (**Work, Leisure, Food, Travel**)  
+✅ Visualize spending with an **interactive chart**  
+✅ Supports **dark/light mode** for better UI experience  
+✅ Responsive layout for different screen sizes  
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠️ Technologies Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter** - Cross-platform app development framework
+- **Dart** - Programming language for Flutter
+- **Provider/Bloc (if used)** - State management
+- **SQLite/Hive (if used)** - Local database
+
+
+## 🚀 Installation
+
+1. **Clone the Repository:**  
+   ```sh
+   git clone https://github.com/jaimonvarghese/expense-tracker-app.git
+   cd  expense_tracker_app
+   ```
+2. **Install Dependencies:**  
+   ```sh
+   flutter pub get
+   ```
+3. **Run the App:**  
+   ```sh
+   flutter run
+   ```
+
+## 📱 APK Download
+[Download APK] https://drive.google.com/file/d/1OK9b-lWIkqNmdromDHfAgtrKbOXJ5eoJ/view?usp=sharing 
+
+
+## 🙌 Acknowledgments
+A huge shoutout to **Udemy instructors** and the **Flutter community** for making learning so engaging! 🎉
+
+---
+
+Feel free to **star** ⭐ the repository if you find it useful! Happy coding! 🚀
+
